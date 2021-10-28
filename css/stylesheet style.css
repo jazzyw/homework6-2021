@@ -86,7 +86,8 @@ a:active {
     /* position: fixed; */
     flex-direction: row;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
   }
 
