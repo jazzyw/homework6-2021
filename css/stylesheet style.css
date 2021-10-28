@@ -1,0 +1,156 @@
+body {
+  font-family: "Alegreya Sans SC", serif;
+  background: url("../images/concrete_seamless.png") center no-repeat #f1f1f1;
+  background-size: cover;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  color: inherit;
+}
+
+/* TODO: this necessary? header tag already has display flex */
+.nav_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.card header {
+  background: #288088;
+  border: 2px solid #45adad;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* TODO: probably fix the base size property */
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 450px;
+  min-width: 450px;
+}
+
+.gallery img {
+  border: 10px solid #50c7c7;
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* animation */
+@keyframes grow {
+  from {
+    width: 50px;
+    opacity: 0;
+  }
+  to {
+    width: 425px;
+    opacity: 1;
+  }
+}
+
+#logo {
+  animation-name: grow;
+  animation-duration: 5s;
+}
+
+/* For larger screens */
+@media screen and (min-width: 850px) {
+  header {
+    /* position: fixed; */
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+  }
+
+  .card header {
+      position: inherit;
+  }
+
+  .nav_links {
+    flex-direction: row;
+  }
+
+  .pricing {
+    flex-direction: row;
+  }
+
+  .card {
+    flex-basis: 250px;
+    min-width: 250px;
+  }
+}
+
+/* For reduced motion */
+@media screen and (prefers-reduced-motion: reduce) {
+  #logo {
+    animation: none;
+  }
+}
+
+/* For print */
+
+@media print {
+  body {
+    background-image: none !important;
+  }
+
+  .nav_links {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pricing {
+    flex-direction: row;
+  }
+
+  .card {
+    display: flex;
+    flex-basis: 250px;
+    min-width: 250px;
+    border: solid 2px #45addd;
+  }
+
+  #gallery {
+    display: none;
+  }
+
+  .gallery {
+    display: none;
+  }
+
+  .card li:nth-child(odd)::before {
+    content: "👍 ";
+  }
+
+  .card li:nth-child(even)::after {
+    content: " 👍";
+  }
+}
