@@ -13,6 +13,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 a,
@@ -28,6 +29,7 @@ a:active {
 .nav_links {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .card header {
@@ -128,13 +130,19 @@ a:active {
     background-image: none !important;
   }
 
+  nav {
+    width: 100%;
+  }
+
   .nav_links {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .pricing {
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
   }
 
   .card {
