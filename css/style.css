@@ -14,10 +14,11 @@ header {
 
 a,
 a:link,
-a:hover,
 a:visited,
+a:hover,
+a:focus,
 a:active {
-  color: inherit;
+  color: blue;
 }
 
 /* TODO: this necessary? header tag already has display flex */
@@ -40,6 +41,7 @@ a:active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* TODO: probably fix the base size property */
